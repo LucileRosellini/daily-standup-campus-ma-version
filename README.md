@@ -60,6 +60,35 @@ Le site officiel est ici https://nodejs.org/fr/
 - Faire ce tutoriel Angular : [https://angular.io/guide/quickstart](https://angular.io/guide/quickstart)
 
 
+
+
+*ngFor => Pour parcourir la liste prédéfinie de produits
+
+
+*ngIf => utilisez une directive afin qu'Angular ne crée l' élément que si le produit actuel a une description.*ngIf
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+Interpolation {{ }} => Pour afficher les noms des produits, utilisez la syntaxe d'interpolation {{ }}
+
+  Description: {{ product.description }}
+
+Liaison de propriété [ ]=>Pour faire de chaque nom de produit un lien vers les détails du produit, 
+
+<a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+
+
+Liaison d'événement ( )Liez un click événement du bouton à la méthode (ex ; share)
+<button (click)="share()">
+    Partager avec un ami
+  </button>
+
+VOIR AUTRES MANIPULATIONS: https://angular.io/guide/architecture-components#template-syntax
+
+
 --------------------------------------------------------------------------
 
 -[X] Comprendre l’arborescence d’un projet.

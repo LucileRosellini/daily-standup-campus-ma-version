@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Projet } from '../projet';
+import {ProjetsService} from "../projets.service";
 
 @Component({
   selector: 'app-projets',
@@ -7,14 +8,21 @@ import { Projet } from '../projet';
   styleUrls: ['./projets.component.css']
 })
 export class ProjetsComponent implements OnInit {
-  projet: Projet = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  projets: Projet[];
 
-  constructor() { }
+  constructor(private useService:ProjetsService) {
+
+  }
+
 
   ngOnInit() {
+    this.catchGetRecupData();
   }
+
+catchGetRecupData() : void{
+
+  this.useService.getRecupData()
+  .subscribe(projets => this.projets = projets );
+}
 
 }

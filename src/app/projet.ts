@@ -1,4 +1,4 @@
 export interface Projet {
-  id: number;
-  name: string;
+  name: string,
+  date: string
 }
